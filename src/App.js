@@ -19,8 +19,12 @@ export default function App() {
       <TipSelector tipPercentage={friendTip} onSetTipPercentage={setFriendTip}>
         How did your friend like the servies?
       </TipSelector>
-      <Total billAmount={billAmount} myTip={myTip} friendTip={friendTip} />
-      <button onClick={handleReset}>Reset</button>
+      {billAmount > 0 && (
+        <>
+          <Total billAmount={billAmount} myTip={myTip} friendTip={friendTip} />
+          <button onClick={handleReset}>Reset</button>
+        </>
+      )}
     </div>
   );
 }
